@@ -1,13 +1,41 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+class IndexPage extends Component {
+  renderArticles() {
+    return this.props.data.allNodeArticle.edges.map(article => {
+      return <li key={article.node.vid}>{article.node.title}</li>;
+    });
+  }
 
-export default IndexPage
+  render() {
+    this.renderArticles();
+    return (
+      <div>
+        <h1>Page 1</h1>
+        <ul className="articles">{this.renderArticles()}</ul>
+      </div>
+    );
+  }
+}
+
+export default IndexPage;
+
+export const query = graphql`
+  query ArticleQuery {
+    allNodeArticle {
+      edges {
+        node {
+          vid
+          title
+          body {
+            value
+            format
+            processed
+            summary
+          }
+        }
+      }
+    }
+  }
+`;
