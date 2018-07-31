@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
 class IndexPage extends Component {
-  renderArticles() {
-    return this.props.data.allNodeArticle.edges.map(article => {
-      return <li key={article.node.vid}>{article.node.title}</li>;
-    });
-  }
+  // renderArticles() {
+  //   return this.props.data.allNodeArticle.edges.map(article => {
+  //     return <li key={article.node.vid}>{article.node.title}</li>;
+  //   });
+  // }
 
   render() {
-    this.renderArticles();
     return (
       <div>
         <h1>Page 1</h1>
-        <ul className="articles">{this.renderArticles()}</ul>
+        {/* <ul className="articles">{this.renderArticles()}</ul> */}
+        test
       </div>
     );
   }
@@ -21,21 +21,10 @@ class IndexPage extends Component {
 
 export default IndexPage;
 
-export const query = graphql`
-  query ArticleQuery {
-    allNodeArticle {
-      edges {
-        node {
-          vid
-          title
-          body {
-            value
-            format
-            processed
-            summary
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query RecipeQuery {
+//     allNodeRecipe {
+//       edges
+//     }
+//   }
+// `;
