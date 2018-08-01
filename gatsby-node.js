@@ -48,6 +48,11 @@ exports.createPages = ({ graphql, boundActionCreators: { createPage } }) => {
   });
 };
 
+exports.modifyBabelrc = ({ babelrc }) => ({
+  ...babelrc,
+  plugins: babelrc.plugins.concat(['transform-decorators-legacy']),
+});
+
 /**
  * takes in a page name and creates a slug from it
  * @param {String} pageName

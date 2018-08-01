@@ -5,10 +5,15 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-eslint": "^8.2.6",
+    "babel-polyfill": "^6.26.0",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
+    "gatsby-plugin-create-client-paths": "^1.0.8",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-source-drupal": "^2.0.41",
+    "html-react-parser": "^0.4.6",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -22,6 +27,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-app": "^2.1.0",
